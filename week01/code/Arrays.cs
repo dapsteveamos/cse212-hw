@@ -13,8 +13,22 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
-    }
+
+
+        // Step 1: Create a new array of size 'length' to hold the multiples
+        // Step 2: Use a for loop from 0 to length - 1
+        // Step 3: For each index i, set array[i] = number * (i + 1)
+        //         This ensures the multiples start from number (not 0)
+        // Step 4: After filling the array, return it
+
+        double[] result = new double[length];
+        for (int i = 0; i < length; i++)
+        {
+            result[i] = number * (i + 1);
+        }
+        return result;
+    
+}
 
     /// <summary>
     /// Rotate the 'data' to the right by the 'amount'.  For example, if the data is 
@@ -25,9 +39,15 @@ public static class Arrays
     /// </summary>
     public static void RotateListRight(List<int> data, int amount)
     {
-        // TODO Problem 2 Start
-        // Remember: Using comments in your program, write down your process for solving this problem
-        // step by step before you write the code. The plan should be clear enough that it could
-        // be implemented by another person.
+        // Step 1: Determine how many elements need to be moved from the end to the front.
+        //         This is 'amount' elements from the end of the list.
+        // Step 2: Use GetRange to extract those last 'amount' elements into a temporary list.
+        // Step 3: Use RemoveRange to remove those last 'amount' elements from the end of the original list.
+        // Step 4: Use InsertRange to insert the saved elements at the beginning of the list.
+
+        List<int> tail = data.GetRange(data.Count - amount, amount);
+        data.RemoveRange(data.Count - amount, amount);
+        data.InsertRange(0, tail);
     }
+
 }
