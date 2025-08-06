@@ -47,6 +47,7 @@ public static class Trees
     /// <param name="last">the last index in the sortedNumbers to insert</param>
     /// <param name="bst">the BinarySearchTree in which to insert the values</param>
     // Problem 5: InsertMiddle to create balanced BST
+}
 private static void InsertMiddle(int[] sortedNumbers, int first, int last, BinarySearchTree bst)
 {
     if (first > last)
